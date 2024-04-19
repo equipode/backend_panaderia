@@ -12,7 +12,6 @@
 
 ## Realizamos las migraciones con este comando
 
-- php artisan migrate --path=/database/migrations/locales/
 - php artisan migrate
-- php artisan migrate --path=/database/migrations/productos/
-- php artisan migrate --path=/database/migrations/trabajadores/
+- php artisan migrate --path=/database/migrations/inventory
+- php artisan migrate --path=/database/migrations/production_cost
