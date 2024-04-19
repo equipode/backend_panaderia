@@ -63,12 +63,12 @@ class authController extends Controller
         $user_id = $user->id;
         $estado_user = $user->estado_user;
         $pictureUser = $user->picture_user;
-        $rol_user = $user->fk_cargo;
+        $rol_user = $user->fk_rol;
 
 
 
         $datosRoles = roles::find($rol_user);
-        $nombreRol = $datosRoles->nombre_rol;
+        $nombreRol = $datosRoles->name_rol;
         $tipo_rol = $datosRoles->tipo;
         $horaActual = date('H:i:s');
         $fechaActual = date('Y-m-d');
