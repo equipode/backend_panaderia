@@ -33,8 +33,8 @@ class suppliesController extends Controller
 
     public function search(Request $request)
     {
-        $searchCod = $request->search;
-        $searchNomb = $request->search;
+        $searchCod = $request->searchCod;
+        $searchNomb = $request->searchNomb;
 
         $supplies = supplies::query()
             ->where('name_supply', 'like', '%' . $searchNomb . '%')
