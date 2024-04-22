@@ -62,7 +62,7 @@ class authController extends Controller
         $user = auth()->user();
         $user_id = $user->id;
         $estado_user = $user->estado_user;
-        $pictureUser = $user->picture_user;
+        $pictureUser = $user->foto_usuario;
         $rol_user = $user->fk_rol;
 
 
