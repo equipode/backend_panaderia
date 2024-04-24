@@ -5,6 +5,7 @@ namespace App\Http\Controllers\inventory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\inventory\supplies;
+use App\Models\inventory\products;
 use Illuminate\Validation\ValidationException;
 use App\Models\users\roles;
 
