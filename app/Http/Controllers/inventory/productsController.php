@@ -26,6 +26,28 @@ class productsController extends Controller
         return $rol_userV == 1 ? true : false;
     }
 
+    public function index()
+    {
+        $products = products::orderBy('name_prod', 'asc')
+            ->get();
+
+        return response()->json($products);
+    }
+
+    public function search(Request $request)
+    {
+        $searchCod = $request->searchCod;
+        $searchNomb = $request->searchNomb;
+
+        $supplies = supplies::query()
+            ->where('name_prod', 'like', '%' . $searchNomb . '%')
+            ->orWhere('cod_prod', 'like', '%' . $searchCod . '%')
+            ->orderBy('name_prod', 'asc')
+            ->get();
+
+        return response()->json($supplies);
+    }
+
     public function create(Request $request)
     {
         try {
