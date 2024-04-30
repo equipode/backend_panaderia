@@ -39,7 +39,7 @@ class productsController extends Controller
         $searchCod = $request->searchCod;
         $searchNomb = $request->searchNomb;
 
-        $supplies = supplies::query()
+        $supplies = products::query()
             ->where('name_prod', 'like', '%' . $searchNomb . '%')
             ->orWhere('cod_prod', 'like', '%' . $searchCod . '%')
             ->orderBy('name_prod', 'asc')
@@ -86,6 +86,10 @@ class productsController extends Controller
                 $recipe->fk_product = $product->pk_product;
                 $recipe->fk_supply = $value['fk_supply'];
                 $recipe->save();
+
+                $supplie = supplies::find($value['fk_supply']);
+                $supplie->presentation = $value['suppy_presentation'];
+                $supplie->save();
             }
 
             return response()->json([
