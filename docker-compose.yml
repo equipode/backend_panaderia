@@ -6,6 +6,6 @@ services:
         image: mysql
         environment:
             - MYSQL_ROOT_PASSWORD=123456789
-            - MYSQL_DATABASE=db_sistema_comisiones
+            - MYSQL_DATABASE=db_panaderia
         ports:
             - 3306:3306
