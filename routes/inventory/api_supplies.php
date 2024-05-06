@@ -16,4 +16,5 @@ Route::get('supplies', [suppliesController::class, 'index']);
 Route::get('supplies/search', [suppliesController::class, 'search']);
 Route::get('supplies/{id}', [suppliesController::class, 'show']);
 
+Route::get('products', [productsController::class, 'index']);
 Route::post('products', [productsController::class, 'create']);
