@@ -54,7 +54,7 @@ class productsController extends Controller
             $request->validate([
                 'cod_prod' => 'required|min:4|max:18',
                 'name_prod' => 'required|min:6|max:60',
-                'time' => 'required|integer',
+                'time' => 'required|min:2|max:4',
                 'production_cost' => 'required|integer',
                 'cost_of_workers' => 'required|integer',
                 'bills' => 'required|integer',

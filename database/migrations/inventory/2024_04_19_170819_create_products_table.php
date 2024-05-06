@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('pk_product');
             $table->char('cod_prod', 20);
             $table->string('name_prod', 60);
-            $table->unsignedBigInteger('time')->default(0);
+            $table->char('time', 4);
             $table->double('production_cost', 22, 0);
             $table->double('cost_of_workers', 22, 0);
             $table->double('bills', 22, 0);
