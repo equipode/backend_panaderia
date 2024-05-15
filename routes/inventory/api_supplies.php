@@ -18,3 +18,4 @@ Route::get('supplies/{id}', [suppliesController::class, 'show']);
 
 Route::get('products', [productsController::class, 'index']);
 Route::post('products', [productsController::class, 'create']);
+Route::post('products/{id}', [productsController::class, 'show']);

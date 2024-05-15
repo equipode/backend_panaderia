@@ -48,6 +48,24 @@ class productsController extends Controller
         return response()->json($supplies);
     }
 
+    public function show($id = 0)
+    {
+        if ($id <= 0) {
+            return response()->json([
+                'error' => 'debe enviar el id del producto'
+            ], 404);
+        }
+
+        $product = products::find($id);
+        if (is_null($product)) {
+            return response()->json([
+                'error' => 'no se pudo realizar correctamente con este id ' . $id . ''
+            ], 404);
+        }
+
+        return response()->json($product);
+    }
+
     public function create(Request $request)
     {
         try {
